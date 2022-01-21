@@ -45,8 +45,8 @@ class AccountMove(models.Model):
                     )
                 else:
                     move._compute_split_payments()
-            
-            move.amount_total = move.amount_total + move.amount_sp
+            #Rimosso perche gia presente su fattura_pa_out_sp
+            #move.amount_total = move.amount_total + move.amount_sp
 
     def _build_debit_line(self):
         if not self.company_id.sp_account_id:
